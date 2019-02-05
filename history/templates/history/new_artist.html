@@ -1,0 +1,14 @@
+{% extends "history/base.html" %}
+
+{% block content %}
+    <p>Add a New Artist</p>
+
+    <form action="{% url 'history:new_artist' %}" method="post">
+        {% csrf_token %}
+        
+        {{ form }}
+
+        <input type="submit" value="Add New Artist"/>
+    </form>
+
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'history/base.html' %}
+
+{% block content %}
+    <h1>{{ artist.name }}</h1>
+    
+    {% if artist.song_set.all %}
+        <ul>
+        {% for song in artist.song_set.all %}
+            <li>{{ song.name }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>This artist has no songs.</p>
+    {% endif %}
+
+{% endblock content %}
+
+
